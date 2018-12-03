@@ -1,4 +1,4 @@
-/*FONTS*/
+/*--------FONTS-------*/
 @font-face {
     font-family: Archia Light;
     src: url("../assets/fonts/archia-light-webfont.woff");
@@ -27,7 +27,7 @@ svg {
 /*-----*/
 
 
-/*UPPER*/
+/*-------UPPER--------*/
 .upper {
   display: flex;
   justify-content: space-between;
@@ -70,7 +70,28 @@ video {
 }
 
 
-/*TEXT*/
+/*-----LOWER------*/
+.feedback {
+  min-width: auto;
+  height: 35px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px 15px 0px 15px;
+  display: inline-block;
+  border-radius: 7px;
+}
+
+.forms {
+  display: flex;
+}
+
+.forms > div {
+  height: 500px;
+  width: 500px;
+}
+
+
+/*--------TEXT-------*/
 h3 {
   font-family: Archia Bold;
 }
