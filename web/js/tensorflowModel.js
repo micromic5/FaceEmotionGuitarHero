@@ -1,8 +1,9 @@
-//If .js loaded in html, then either the import statement throws a error or the await...
-//tf is only available in the index page.
+console.log('write tf, model in console');
+let model;
+const modelPromise = tf.loadModel('http://localhost:8080/web/models/TF.js/faceEmotionWeights/model.json');
 
 
-
-// import * as tf from '@tensorflow/tfjs';
-
-// const model = await tf.loadModel('http://127.0.0.1:8080/notebook/models/TF.js/faceEmotion2/model.json');
+modelPromise.then(function(value) {
+  console.log(value); // Success!
+  model = value;
+});
