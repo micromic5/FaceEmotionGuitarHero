@@ -6,7 +6,7 @@
   <title>HeroEmotion</title>
 
   <link rel="stylesheet" type="text/css" href="css/styles.css">
-  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"> </script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.js"> </script>
 </head>
 
 <body>
@@ -76,15 +76,17 @@
     <h3>Feeedback</h3>
   </div>
 </div>
-
-<script src="js/formswitch.js" type="text/javascript"></script>
-<script src="js/webcam.js" type="text/javascript"></script>
-<!-- <script src="js/tensorflowModel.js" type="text/javascript"></script> -->
-
-
+<script src="js/functions.js" type="text/javascript"></script>
+  <!-- <script src="js/tensorflowModel.js" type="text/javascript"></script> -->
+  <!-- <script src="js/tensorflowModel.js" type="text/javascript"></script> -->
   <script>
-    console.log('write tf in console');
-    const model = tf.loadModel('http://127.0.0.1:8080/notebook/models/TF.js/faceEmotion2/model.json');
+    console.log('write tf, model in console');
+    let model;
+    const modelPromise = tf.loadModel('http://localhost:8080/web/models/TF.js/faceEmotion2/model.json');
+    modelPromise.then(function(value) {
+      console.log(value); // Success!
+      model = value;
+    });
   </script>
 </body>
 
