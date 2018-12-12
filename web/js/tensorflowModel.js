@@ -1,6 +1,10 @@
 console.log('write tf/model in console');
+const pathname = window.location.pathname; // Returns path only (/path/example.html)
+const url = window.location.href; // Returns full URL (https://example.com/path/example.html)
+const origin = window.location.origin; // Returns base URL (https://example.com)
+
 let model;
-const MODEL_PATH = 'http://localhost:8080/web/models/TF.js/faceEmotionWeights/model.json';
+const MODEL_PATH = url+ 'models/TF.js/faceEmotionWeights/model.json';
 let IMAGE_SIZE = 48;
 
 let predictionsElement = document.getElementById("predictions");
@@ -61,7 +65,8 @@ const filesElement = document.getElementById("files");
 filesElement.addEventListener("change", evt => {
   let files = evt.target.files;
   // Display thumbnails & issue call to predict each image.
-  for (let i = 0, f; (f = files[i]); i++) {
+  for (let i = 0, f;
+    (f = files[i]); i++) {
     // Only process image files (skip non image files)
     if (!f.type.match("image.*")) {
       continue;
