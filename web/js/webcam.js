@@ -1,4 +1,4 @@
-var video = document.querySelector("#videoElement");
+let video = document.querySelector("#videoElement");
 
 if (navigator.mediaDevices.getUserMedia) {
     navigator.mediaDevices.getUserMedia({video: true})
