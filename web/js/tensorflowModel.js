@@ -4,7 +4,7 @@ const url = window.location.href; // Returns full URL (https://example.com/path/
 const origin = window.location.origin; // Returns base URL (https://example.com)
 
 let model;
-const MODEL_PATH = url+ 'models/TF.js/faceEmotionWeights/model.json';
+const MODEL_PATH = url + 'models/TF.js/faceEmotionWeights/model.json';
 let IMAGE_SIZE = 48;
 
 let predictionsElement = document.getElementById("predictions");
@@ -86,6 +86,22 @@ filesElement.addEventListener("change", evt => {
     reader.readAsDataURL(f);
   }
 });
+
+function test() {
+  let snapshot = new Image();
+    snapshot.id = "pic";
+    snapshot.width = IMAGE_SIZE;
+    snapshot.height = IMAGE_SIZE;
+    snapshot.src = document.querySelector('canvas').toDataURL();
+    predict(snapshot);
+    // console.log("snapshot: ");
+    // console.log(snapshot);
+  setTimeout(function() {
+    test();
+  }, 1000);
+}
+
+test();
 
 
 MODEL_PROMISE();
