@@ -20,10 +20,11 @@ function getforms() {
     myhexa.style.backgroundColor="red";
 }
 
-function classes() {
-    var element = document.getElementById("myDIV");
-    element.classList.add("mystyle");
-}
+/*function classes() {
+    previous.classList.add("small-op");
+    current.classList.add("big");
+    next.classList.add("small");
+}*/
 
 
 getforms();
