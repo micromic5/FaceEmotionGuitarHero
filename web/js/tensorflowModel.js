@@ -89,13 +89,11 @@ filesElement.addEventListener("change", evt => {
 
 function test() {
   let snapshot = new Image();
-    snapshot.id = "pic";
-    snapshot.width = IMAGE_SIZE;
-    snapshot.height = IMAGE_SIZE;
-    snapshot.src = document.querySelector('canvas').toDataURL();
-    predict(snapshot);
-    // console.log("snapshot: ");
-    // console.log(snapshot);
+  snapshot.src = document.getElementById('small_canvas').toDataURL();
+  snapshot.width = IMAGE_SIZE;
+  snapshot.height = IMAGE_SIZE;
+  snapshot.onload = () => predict(snapshot);
+  // predict(snapshot);
   setTimeout(function() {
     test();
   }, 1000);
