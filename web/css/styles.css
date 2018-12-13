@@ -1,12 +1,12 @@
 /*--------FONTS-------*/
 @font-face {
-    font-family: Archia Light;
-    src: url("../assets/fonts/archia-light-webfont.woff");
+  font-family: Archia Light;
+  src: url("../assets/fonts/archia-light-webfont.woff");
 }
 
 @font-face {
-    font-family: Archia Bold;
-    src: url("../assets/fonts/archia-bold-webfont.woff");
+  font-family: Archia Bold;
+  src: url("../assets/fonts/archia-bold-webfont.woff");
 }
 
 /*-----*/
@@ -16,17 +16,16 @@
   color: white;
 }
 
-  body {
+body {
   background-color: #2C2C2C;
-  margin:20px 0px 0px 0px;
+  margin: 20px 0px 0px 0px;
 }
 
 svg {
   transform: scale(0.7, 0.7);
 }
+
 /*-----*/
-
-
 /*-------UPPER--------*/
 .upper {
   display: flex;
@@ -65,10 +64,8 @@ video {
   right: -18px;
   position: relative;
   z-index: -1;
-
   padding: 10px 5px 10px 10px;
 }
-
 
 /*-----LOWER------*/
 .feedback {
@@ -85,11 +82,10 @@ video {
   display: flex;
 }
 
-.forms > div {
+.forms>div {
   height: 500px;
   width: 500px;
 }
-
 
 /*--------TEXT-------*/
 h3 {
@@ -103,4 +99,12 @@ p {
 .item p {
   text-align: center;
   font-size: 0.7em;
+}
+
+.camOverlay {
+  position: absolute;
+  width: 320px;
+  min-height: 240px;
+  background-color: #000;
+  z-index: 300000;
 }
