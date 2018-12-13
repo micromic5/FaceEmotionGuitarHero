@@ -18,10 +18,10 @@ video.onloadedmetadata = function() {
   width = video.width;
   height = video.height;
 
-  snapStartX = (width / 2) - 50;
-  snapStartY = (height / 2) - 50;
-  snapEndX = (width / 2) - 50;
-  snapEndY = (height / 2);
+  snapStartX = (width / 2) - 50; // 110
+  snapStartY = (height / 2) - 50; // 70
+  snapEndX = (width / 2); // 70
+  snapEndY = (height / 2); //120
 
   // Set the canvas1 width and height
   canvas1.width = width;

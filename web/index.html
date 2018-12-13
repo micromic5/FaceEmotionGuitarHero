@@ -26,7 +26,7 @@
           <svg id="hexa" data-name="hexa" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 326 325">
             <path d="M235.7,39.2l72.94,126.35L235.7,291.89H89.8L16.86,165.55,89.8,39.2H235.7m6.92-12H82.88L3,165.55,82.88,303.89H242.62L322.5,165.55,242.62,27.2Z" fill="#20ff03" />
           </svg>
-          <p>disgust</p>
+          <p>discust</p>
         </div>
 
         <div class="item">
@@ -63,33 +63,33 @@
         <p id="scoreNumber">0</p>
       </div>
       <div class="">
-        <div class="camOverlay"></div>
-        <video autoplay="true" width="320" height="240" id="videoElement">
-        </video>
-      </div>
-      <canvas id="snapshot" width="320" height="240"></canvas>
-      <canvas id="small_canvas" width="320" height="240"></canvas>
-    </div>
-  </div>
+        <img id="camOverlay" src="assets/camOverlay.png" width="320" height="240" />
 
-  <div class="lower">
-    <div class="forms">
-      <div id="previous">
-      </div>
-      <div id="current">
-      </div>
-      <div id="next">
+        <video autoplay="true" width="320" height="240" id="videoElement">
+          <canvas id="snapshot" width="320" height="240"></canvas>
+          <canvas id="small_canvas" width="320" height="240"></canvas>
       </div>
     </div>
-    <div class="feedback">
-      <h3>Feeedback</h3>
+
+    <div class="lower">
+      <div class="forms">
+        <div id="previous">
+        </div>
+        <div id="current">
+        </div>
+        <div id="next">
+        </div>
+      </div>
+      <div class="feedback">
+        <h3>Feeedback</h3>
+      </div>
     </div>
-  </div>
-  <script src="js/webcam.js" type="text/javascript"></script>
-  <script src="js/counter.js" type="text/javascript"></script>
-  <script src="js/formswitch.js" type="text/javascript"></script>
-  <script src="js/tensorflowModel.js" type="text/javascript"></script>
-  <script src="js/takeScreenshot.js" type="text/javascript"></script>
+    <script src="js/webcam.js" type="text/javascript"></script>
+    <script src="js/counter.js" type="text/javascript"></script>
+    <script src="js/formswitch.js" type="text/javascript"></script>
+    <script src="js/tensorflowModel.js" type="text/javascript"></script>
+    <script src="js/takeScreenshot.js" type="text/javascript"></script>
+    <script src="js/camOverlay.js" type="text/javascript"></script>
 </body>
 
 </html>

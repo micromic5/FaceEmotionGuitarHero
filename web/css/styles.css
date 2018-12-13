@@ -53,6 +53,11 @@ video {
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
   float: right;
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  /* Safari and Chrome */
+  -moz-transform: rotateY(180deg);
+  /* Firefox */
 }
 
 .score {
@@ -68,12 +73,6 @@ video {
 }
 
 /*-----LOWER------*/
-.lower {
-margin: 200px 0px 0px 100px;
-width: 800px;
-
-}
-
 .feedback {
   min-width: auto;
   height: 35px;
@@ -107,10 +106,8 @@ p {
   font-size: 0.7em;
 }
 
-.camOverlay {
+#camOverlay {
   position: absolute;
-  width: 320px;
-  min-height: 240px;
-  background-color: #000;
+  /* background-color: black; */
   z-index: 300000;
 }
