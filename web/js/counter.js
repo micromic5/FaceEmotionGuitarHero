@@ -1,9 +1,13 @@
-var counter = document.getElementById("counter").innerHTML;
+let scoreNumber = document.getElementById("scoreNumber");
+let counter = 0;
 
 
-
-function MyScore() {
-  counter = 50;
+function MyScore(counter) {
+  scoreNumber.innerHTML = counter;
 };
 
-MyScore();
+function increaseCounter() {
+  MyScore(counter+=1);
+}
+
+increaseCounter();
