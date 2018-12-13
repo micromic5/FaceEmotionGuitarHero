@@ -17,7 +17,6 @@ function getforms() {
     previous.appendChild(mycircle);
     current.appendChild(mytriangle);
     next.appendChild(myhexa);
-    myhexa.style.transform = scale(10);
 }
 
 /*function classes() {
