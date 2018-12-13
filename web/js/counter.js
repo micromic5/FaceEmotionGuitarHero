@@ -1,7 +1,9 @@
-var score = document.getElementById("counter")
-  count = 0;
-  
-score.onclick = function() {
-  count += 1;
-  console.log(score);
+var counter = document.getElementById("counter").innerHTML;
+
+
+
+function MyScore() {
+  counter = 50;
 };
+
+MyScore();
