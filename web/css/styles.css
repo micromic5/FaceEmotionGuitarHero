@@ -71,6 +71,12 @@ video {
 
 
 /*-----LOWER------*/
+.lower {
+margin: 200px 0px 0px 100px;
+width: 800px;
+
+}
+
 .feedback {
   min-width: auto;
   height: 35px;
