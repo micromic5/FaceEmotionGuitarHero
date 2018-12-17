@@ -53,11 +53,11 @@ video {
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
   float: right;
+
   transform: rotateY(180deg);
   -webkit-transform: rotateY(180deg);
-  /* Safari and Chrome */
   -moz-transform: rotateY(180deg);
-  /* Firefox */
+  
 }
 
 .score {

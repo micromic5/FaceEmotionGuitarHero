@@ -18,16 +18,16 @@ video.onloadedmetadata = function() {
   width = video.width;
   height = video.height;
 
-  snapStartX = (width / 2) - 50; // 110
-  snapStartY = (height / 2) - 50; // 70
-  snapEndX = (width / 2); // 70
-  snapEndY = (height / 2); //120
+  snapStartX = (width / 2) -24;
+  snapStartY = (height / 2) - 24;
+  snapEndX = (width / 2);
+  snapEndY = (height / 2);
 
   // Set the canvas1 width and height
   canvas1.width = width;
   canvas1.height = height;
-  canvas1.style.display = "none";
-  canvas2.style.display = "none";
+  // canvas1.style.display = "none";
+  // canvas2.style.display = "none";
   snap();
 }
 

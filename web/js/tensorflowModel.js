@@ -87,7 +87,7 @@ filesElement.addEventListener("change", evt => {
   }
 });
 
-function test() {
+function predictSnapshot() {
   let snapshot = new Image();
   snapshot.src = document.getElementById('small_canvas').toDataURL();
   snapshot.width = IMAGE_SIZE;
@@ -95,11 +95,11 @@ function test() {
   snapshot.onload = () => predict(snapshot);
   // predict(snapshot);
   setTimeout(function() {
-    test();
+    predictSnapshot();
   }, 1000);
 }
 
-test();
+predictSnapshot();
 
 
 MODEL_PROMISE();
