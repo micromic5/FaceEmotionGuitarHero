@@ -48,7 +48,7 @@ function showResults(imgElement, logits) {
   predictionContainer.className = "pred-container";
   //
   const probsContainer = document.createElement("div");
-  probsContainer.innerText = "class: " + logits.as1D().argMax().dataSync();
+  probsContainer.innerText = replaceClassWithEmotion(logits);
   predictionContainer.appendChild(probsContainer);
   //
   const imgContainer = document.createElement("div");
@@ -59,6 +59,34 @@ function showResults(imgElement, logits) {
     predictionContainer,
     predictionsElement.firstChild
   );
+}
+
+function replaceClassWithEmotion(logits) {
+  switch (logits.as1D().argMax().dataSync()[0]) {
+    case 0:
+      return "Angry";
+      break;
+    case 1:
+      return "Disgust";
+      break;
+    case 2:
+      return "Fear";
+      break;
+    case 3:
+      return "Happy";
+      break;
+    case 4:
+      return "Sad";
+      break;
+    case 5:
+      return "Surprise";
+      break;
+    case 6:
+      return "Neutral";
+      break;
+    default:
+      return "Neutral";
+  }
 }
 
 const filesElement = document.getElementById("files");
