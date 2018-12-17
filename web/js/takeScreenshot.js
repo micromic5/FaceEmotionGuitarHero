@@ -7,25 +7,19 @@ let snapStartY;
 let snapEndX;
 let snapEndY;
 
-let width, height, ratio;
 let timeout = 1; //milliseconds
 
 let clip;
 
 video.onloadedmetadata = function() {
-  //Calculate the ratio
-  ratio = video.width / video.height;
-  width = video.width;
-  height = video.height;
-
-  snapStartX = (width / 2) - 48;
-  snapStartY = (height / 2) - 48;
-  snapEndX = (width / 2);
-  snapEndY = (height / 2);
+  snapStartX = (video.width / 2) - canvas2.width / 2;
+  snapStartY = (video.height / 2) - canvas2.height / 2;
+  snapEndX = (video.width / 2);
+  snapEndY = (video.height / 2);
 
   // Set the canvas1 width and height
-  canvas1.width = width;
-  canvas1.height = height;
+  canvas1.width = video.width;
+  canvas1.height = video.height;
   canvas1.style.display = "none";
   canvas2.style.display = "none";
   snap();
@@ -35,7 +29,7 @@ video.onloadedmetadata = function() {
 function snap() {
   clip = context1.getImageData(snapStartX, snapStartY, snapEndX, snapEndY);
   context2.putImageData(clip, 0, 0);
-  context1.drawImage(video, 0, 0, width, height);
+  context1.drawImage(video, 0, 0, video.width, video.height);
   // Call the function again
   setTimeout(function() {
     snap();

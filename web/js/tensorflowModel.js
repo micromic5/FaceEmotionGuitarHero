@@ -52,6 +52,11 @@ function showResults(imgElement, logits) {
   predictionContainer.appendChild(probsContainer);
   //
   const imgContainer = document.createElement("div");
+
+  imgElement.style.transform = "rotateY(180deg)";
+  imgElement.style.webkitTransform = "rotateY(180deg)";
+  imgElement.style.mozTransform = "rotateY(180deg)";
+
   imgContainer.appendChild(imgElement);
   predictionContainer.appendChild(imgContainer);
   //
@@ -59,6 +64,11 @@ function showResults(imgElement, logits) {
     predictionContainer,
     predictionsElement.firstChild
   );
+  if (predictionsElement.children[1] != null) {
+    predictionsElement.removeChild(predictionsElement.children[1]);
+
+}
+
 }
 
 function replaceClassWithEmotion(logits) {
