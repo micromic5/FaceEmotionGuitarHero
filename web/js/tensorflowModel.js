@@ -134,7 +134,7 @@ function predictSnapshot() {
   // predict(snapshot);
   setTimeout(function() {
     predictSnapshot();
-  }, 1000);
+  }, 1);
 }
 
 predictSnapshot();
