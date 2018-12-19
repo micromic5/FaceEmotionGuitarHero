@@ -11,10 +11,6 @@ let next = document.getElementById("next");
 
 let randomForms = mysvg[Math.floor(Math.random() * mysvg.length)].cloneNode(true);
 
-
-getforms();
-
-
 function getRNDNumberOfSVGArray() {
 	return Math.floor(Math.random()* mysvg.length);
 }
@@ -24,8 +20,6 @@ function cloneRNDNodeOfSVG() {
 }
 
 function getforms() {
-  //previous.appendChild(cloneRNDNodeOfSVG());
-  //current.appendChild(cloneRNDNodeOfSVG());
   next.appendChild(cloneRNDNodeOfSVG());
   setTimeout(function(){
     current.appendChild(next.getElementsByTagName("svg")[0]);
@@ -35,17 +29,30 @@ function getforms() {
     previous.appendChild(current.getElementsByTagName("svg")[0]);
     current.appendChild(next.getElementsByTagName("svg")[0]);
     next.appendChild(cloneRNDNodeOfSVG());
+    previous.removeChild(previous.firstChild);
+    gameLoop();
   },9000)
-  //setTimeout(function(){current.appendChild(next.getElementsByTagName("svg")[0]);},5000)
 }
 
+function gameLoop(){
+    setInterval(function(){
+        previous.removeChild(previous.firstChild);
+        setTimeout(function(){
+            previous.appendChild(current.getElementsByTagName("svg")[0]);
+            current.appendChild(next.getElementsByTagName("svg")[0]);
+            next.appendChild(cloneRNDNodeOfSVG());
+        },100);
+    },2000);
+}
 
+getforms();
+/*
 
 let previousStyle = previous.children[0].style;
 let currentStyle = current.children[0].style;
 let nextStyle = next.children[0].style;
 
-/*
+
 function styles() {
   previousStyle.transform = "scale(3,3)";
   currentStyle.transform = "scale(5,5)";
