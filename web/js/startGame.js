@@ -10,12 +10,13 @@ activateOverlay();
 
 function activateOverlay() {
   overlay.style.display = "block";
-  camOverlay.style.display = "none";
+  // camOverlay.style.display = "none";
 }
 
 function startGame() {
   //Prevent multiclicks
   overlay.removeEventListener("click", startGame);
+
   for (let i = 0; i < 3; i++) {
     setTimeout(function() {
       text.innerHTML = 3 - i;
@@ -25,8 +26,8 @@ function startGame() {
     text.innerHTML = "go";
   }, 3000);
   setTimeout(function() {
+    // camOverlay.style.display = "block";
     overlay.style.display = "none";
-    camOverlay.style.display = "block";
     //starts the game
     getforms();
   }, 4000);
