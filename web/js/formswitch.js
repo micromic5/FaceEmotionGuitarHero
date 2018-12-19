@@ -25,31 +25,33 @@ function getforms() {
   setTimeout(function(){
     current.appendChild(next.getElementsByTagName("svg")[0]);
     next.appendChild(cloneRNDNodeOfSVG());
-    currentForm = current.firstElemntChild.id;
+    currentForm = current.firstElementChild.getAttribute("emotion");
   },5000)
   setTimeout(function(){
-    console.log(mostFrequentArrayElement(pastPredictions));
-    console.log("curren:"+currentForm)
+    if(mostFrequentArrayElement(pastPredictions) == currentForm){
+        increaseCounter();
+    }
     previous.appendChild(current.getElementsByTagName("svg")[0]);
     current.appendChild(next.getElementsByTagName("svg")[0]);
     next.appendChild(cloneRNDNodeOfSVG());
     previous.removeChild(previous.firstChild);
-    currentForm = current.firstElemntChild.id;
+    currentForm = current.firstElementChild.getAttribute("emotion");
     gameLoop();
   },9000)
 }
 
 function gameLoop(){
     setInterval(function(){
-        console.log(mostFrequentArrayElement(pastPredictions));
-        console.log("curren:"+currentForm)
+        if(mostFrequentArrayElement(pastPredictions) == currentForm){
+            increaseCounter();
+        }
         pastPredictions = [];
         previous.removeChild(previous.firstChild);
         setTimeout(function(){
             previous.appendChild(current.getElementsByTagName("svg")[0]);
             current.appendChild(next.getElementsByTagName("svg")[0]);
             next.appendChild(cloneRNDNodeOfSVG());
-            currentForm = current.firstElemntChild.id;
+            currentForm = current.firstElementChild.getAttribute("emotion");
         },100);
     },2000);
 }
