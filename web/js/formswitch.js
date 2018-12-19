@@ -11,7 +11,7 @@ const mySVGLength = mysvg.length;
 
 function getRNDNumberOfSVGArray() {
   do {
-		previousNumber = randomNumber;
+    previousNumber = randomNumber;
     randomNumber = Math.floor(Math.random() * mySVGLength);
   }
   while (previousNumber == randomNumber);
