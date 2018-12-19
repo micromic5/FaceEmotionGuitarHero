@@ -51,16 +51,16 @@ h2 {
   width: 100vw;
 }
 
-#ready>h2:last-child {
+#ready>h2 {
   position: absolute;
-  line-height: 135vh;
   font-size: 2em;
   width: 100vw;
 }
 
+#ready>h2:last-child {
+  line-height: 135vh;
+}
+
 #ready>h2:first-child {
-  position: absolute;
   line-height: 60vh;
-  font-size: 2em;
-  width: 100vw;
 }
