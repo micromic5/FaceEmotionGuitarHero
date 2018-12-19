@@ -24,16 +24,28 @@ function cloneRNDNodeOfSVG() {
 }
 
 function getforms() {
-  previous.appendChild(cloneRNDNodeOfSVG());
-  current.appendChild(cloneRNDNodeOfSVG());
+  //previous.appendChild(cloneRNDNodeOfSVG());
+  //current.appendChild(cloneRNDNodeOfSVG());
   next.appendChild(cloneRNDNodeOfSVG());
+  setTimeout(function(){
+    current.appendChild(next.getElementsByTagName("svg")[0]);
+    next.appendChild(cloneRNDNodeOfSVG());
+  },5000)
+  setTimeout(function(){
+    previous.appendChild(current.getElementsByTagName("svg")[0]);
+    current.appendChild(next.getElementsByTagName("svg")[0]);
+    next.appendChild(cloneRNDNodeOfSVG());
+  },9000)
+  //setTimeout(function(){current.appendChild(next.getElementsByTagName("svg")[0]);},5000)
 }
+
+
 
 let previousStyle = previous.children[0].style;
 let currentStyle = current.children[0].style;
 let nextStyle = next.children[0].style;
 
-
+/*
 function styles() {
   previousStyle.transform = "scale(3,3)";
   currentStyle.transform = "scale(5,5)";
@@ -45,7 +57,7 @@ function styles() {
 
 styles();
 
-
+*/
 /*Switch function*/
 /*switch(new random) {
     case 0:
