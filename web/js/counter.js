@@ -7,7 +7,7 @@ function MyScore(counter) {
 };
 
 function increaseCounter() {
-  MyScore(counter+=1);
+  MyScore(counter += 1);
 }
 
 increaseCounter();

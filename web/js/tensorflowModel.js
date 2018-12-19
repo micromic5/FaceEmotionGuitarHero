@@ -67,7 +67,7 @@ function showResults(imgElement, logits) {
   if (predictionsElement.children[1] != null) {
     predictionsElement.removeChild(predictionsElement.children[1]);
 
-}
+  }
 
 }
 
