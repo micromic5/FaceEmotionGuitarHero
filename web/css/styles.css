@@ -29,7 +29,7 @@ svg {
 /*-------UPPER--------*/
 .upper {
   display: flex;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
@@ -54,11 +54,9 @@ video {
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
   float: right;
-
   transform: rotateY(180deg);
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
-
 }
 
 .score {
@@ -89,8 +87,10 @@ video {
 }
 
 .forms>div {
-  height: 500px;
-  width: 500px;
+  /* height: 500px; */
+  /* width: 500px; */
+  height: calc(500px - 88px);
+  width: 33vw;
 }
 
 /*--------TEXT-------*/
@@ -112,7 +112,6 @@ p {
   /* background-color: black; */
   z-index: 300000;
 }
-
 
 #predictions {
   display: none;
