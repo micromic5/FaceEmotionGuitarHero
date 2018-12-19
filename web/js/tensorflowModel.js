@@ -1,27 +1,19 @@
-console.log('write tf/model in console');
-const pathname = window.location.pathname; // Returns path only (/path/example.html)
 const url = window.location.href; // Returns full URL (https://example.com/path/example.html)
-const origin = window.location.origin; // Returns base URL (https://example.com)
-
 let model;
 const MODEL_PATH = url + 'models/TF.js/faceEmotionWeights/model.json';
 let IMAGE_SIZE = 48;
-
 let predictionsElement = document.getElementById("predictions");
-// let statusElement = document.getElementById("status");
-// const status = msg => (statusElement.innerText = msg);
-
-var pastPredictions = [];
-
+let pastPredictions = [];
 const MODEL_PROMISE = async () => {
-  // status("Loading model...");
   model = await tf.loadModel(MODEL_PATH);
-  // status("Model loaded");
 };
+
+predictSnapshot();
+MODEL_PROMISE();
+
 
 async function predict(imgElement) {
   if (model != null) {
-    // status("Predicting...");
     const startTime = performance.now();
     const logits = tf.tidy(() => {
       // tf.fromPixels() returns a Tensor from an image element.
@@ -38,13 +30,7 @@ async function predict(imgElement) {
       const batched = final_img.reshape([1, IMAGE_SIZE, IMAGE_SIZE, 1]);
       // Make a prediction through mobilenet.
       return model.predict(batched);
-
     });
-
-    // Shoe inference time
-    // const totalTime = performance.now() - startTime;
-    // status(`Done in ${Math.floor(totalTime)}ms`);
-    // Show the classes in the DOM.
     showResults(imgElement, logits);
   }
 }
@@ -60,7 +46,7 @@ function showResults(imgElement, logits) {
   predictionContainer.appendChild(probsContainer);
   //
   const imgContainer = document.createElement("div");
-
+  //Rotate Cam
   imgElement.style.transform = "rotateY(180deg)";
   imgElement.style.webkitTransform = "rotateY(180deg)";
   imgElement.style.mozTransform = "rotateY(180deg)";
@@ -74,9 +60,7 @@ function showResults(imgElement, logits) {
   );
   if (predictionsElement.children[1] != null) {
     predictionsElement.removeChild(predictionsElement.children[1]);
-
   }
-
 }
 
 function replaceClassWithEmotion(logits) {
@@ -107,33 +91,6 @@ function replaceClassWithEmotion(logits) {
   }
 }
 
-// const filesElement = document.getElementById("files");
-
-
-// filesElement.addEventListener("change", evt => {
-//   let files = evt.target.files;
-//   // Display thumbnails & issue call to predict each image.
-//   for (let i = 0, f;
-//     (f = files[i]); i++) {
-//     // Only process image files (skip non image files)
-//     if (!f.type.match("image.*")) {
-//       continue;
-//     }
-//     let reader = new FileReader();
-//     const idx = i;
-//     // Closure to capture the file information.
-//     reader.onload = e => {
-//       // Fill the image & call predict.
-//       let img = document.createElement("img");
-//       img.src = e.target.result;
-//       img.width = IMAGE_SIZE;
-//       img.height = IMAGE_SIZE;
-//       img.onload = () => predict(img);
-//     };
-//     // Read in the image file as a data URL.
-//     reader.readAsDataURL(f);
-//   }
-// });
 
 function predictSnapshot() {
   let snapshot = new Image();
@@ -141,13 +98,7 @@ function predictSnapshot() {
   snapshot.width = IMAGE_SIZE;
   snapshot.height = IMAGE_SIZE;
   snapshot.onload = () => predict(snapshot);
-  // predict(snapshot);
   setTimeout(function() {
     predictSnapshot();
   }, 1);
 }
-
-predictSnapshot();
-
-
-MODEL_PROMISE();
