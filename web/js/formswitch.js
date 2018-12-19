@@ -5,6 +5,10 @@ const mytriangle = mysvg[2].cloneNode(true);
 const mycube = mysvg[3].cloneNode(true);
 const myline = mysvg[4].cloneNode(true);
 
+
+
+
+
 let previous = document.getElementById("previous");
 let current = document.getElementById("current");
 let next = document.getElementById("next");
@@ -14,7 +18,8 @@ let randomForms = mysvg[Math.floor(Math.random() * mysvg.length)].cloneNode(true
 var currentForm = "nothing";
 
 function getRNDNumberOfSVGArray() {
-	return Math.floor(Math.random()* mysvg.length);
+	var test = Math.floor(Math.random() * 5);
+	return test;
 }
 
 function cloneRNDNodeOfSVG() {
