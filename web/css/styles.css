@@ -44,18 +44,6 @@ body {
   display: flex;
 }
 
-.wrapper-camera {
-  display: flex;
-}
-
-video {
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  float: right;
-  transform: rotateY(180deg);
-  -webkit-transform: rotateY(180deg);
-  -moz-transform: rotateY(180deg);
-}
 
 .score {
   width: 110px;
@@ -101,11 +89,6 @@ p {
 .item p {
   text-align: center;
   font-size: 0.7em;
-}
-
-#camOverlay {
-  position: absolute;
-  z-index: 300000;
 }
 
 #predictions {

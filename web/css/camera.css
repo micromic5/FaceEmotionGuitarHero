@@ -1,0 +1,16 @@
+.wrapper-camera {
+  display: flex;
+}
+video {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  float: right;
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+}
+
+#camOverlay {
+  position: absolute;
+  z-index: 300000;
+}
