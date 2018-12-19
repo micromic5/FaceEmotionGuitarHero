@@ -116,3 +116,17 @@ p {
 #predictions {
   display: none;
 }
+
+#previous svg{
+  transform: scale(3,3);
+  opacity: 0.2;
+}
+
+#current svg{
+  transform: scale(5,5);
+}
+
+#next svg{
+  transform: scale(3,3);
+  opacity:  0.5;
+}

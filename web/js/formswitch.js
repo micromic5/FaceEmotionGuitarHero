@@ -46,25 +46,7 @@ function gameLoop(){
 }
 
 getforms();
-/*
 
-let previousStyle = previous.children[0].style;
-let currentStyle = current.children[0].style;
-let nextStyle = next.children[0].style;
-
-
-function styles() {
-  previousStyle.transform = "scale(3,3)";
-  currentStyle.transform = "scale(5,5)";
-  nextStyle.transform = "scale(3,3)";
-
-  previousStyle.opacity = "0.2";
-  nextStyle.opacity = "0.5";
-}
-
-styles();
-
-*/
 /*Switch function*/
 /*switch(new random) {
     case 0:
