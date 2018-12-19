@@ -11,6 +11,8 @@ let predictionsElement = document.getElementById("predictions");
 // let statusElement = document.getElementById("status");
 // const status = msg => (statusElement.innerText = msg);
 
+var pastPredictions = [];
+
 const MODEL_PROMISE = async () => {
   // status("Loading model...");
   model = await tf.loadModel(MODEL_PATH);
@@ -52,8 +54,9 @@ function showResults(imgElement, logits) {
   predictionContainer.className = "pred-container";
   //
   const probsContainer = document.createElement("div");
-  probsContainer.innerText = replaceClassWithEmotion(logits);
-  console.log(replaceClassWithEmotion(logits));
+  let currentPrediction = replaceClassWithEmotion(logits);
+  probsContainer.innerText = currentPrediction;
+  pastPredictions.push(currentPrediction)
   predictionContainer.appendChild(probsContainer);
   //
   const imgContainer = document.createElement("div");
