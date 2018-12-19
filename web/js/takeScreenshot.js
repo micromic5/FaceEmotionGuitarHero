@@ -6,9 +6,7 @@ let snapStartX;
 let snapStartY;
 let snapEndX;
 let snapEndY;
-
 let timeout = 1; //milliseconds
-
 let clip;
 
 video.onloadedmetadata = function() {
@@ -16,10 +14,10 @@ video.onloadedmetadata = function() {
   snapStartY = (video.height / 2) - canvas2.height / 2;
   snapEndX = (video.width / 2);
   snapEndY = (video.height / 2);
-
   // Set the canvas1 width and height
   canvas1.width = video.width;
   canvas1.height = video.height;
+  //hide both canvas
   canvas1.style.display = "none";
   canvas2.style.display = "none";
   snap();
