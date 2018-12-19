@@ -57,7 +57,7 @@ video {
   transform: rotateY(180deg);
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
-  
+
 }
 
 .score {
@@ -110,4 +110,9 @@ p {
   position: absolute;
   /* background-color: black; */
   z-index: 300000;
+}
+
+
+#predictions {
+  display: none;
 }
