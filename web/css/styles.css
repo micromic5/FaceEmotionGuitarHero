@@ -120,19 +120,37 @@ p {
 #previous svg{
   transform: scale(3,3);
   opacity: 0.2;
-  animation-name: translate;
+  animation-name: translatorPrevious;
   animation-duration: 2s;
-  animation-iteration-count: infinite;
-}
-@keyframes translate {
-  0%   {left:0px;}
-  100% {left:50px;}
+  animation-fill-mode: forwards;}
+@keyframes translatorPrevious {
+  0%   {left:0;}
+  100% {left:-100%;opacity:  0;}
 }
 #current svg{
   transform: scale(5,5);
+  position: relative;
+  animation-name: translatorCurrent;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
 }
-
+@keyframes translatorCurrent {
+  0%   {left:0;}
+  100% {left:-100%;opacity:0.5;transform:scale(3,3)}
+}
 #next svg{
+  transform: scale(3,3);
+  opacity:  0.5;
+  position: relative;
+  animation-name: translatorNext;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+@keyframes translatorNext {
+  0%   {left:0;}
+  100% {left:-100%;opacity:  1;transform:scale(5,5)}
+}
+#next2{
   transform: scale(3,3);
   opacity:  0.5;
 }
