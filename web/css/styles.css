@@ -51,8 +51,8 @@ svg {
 }
 
 video {
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
   float: right;
   transform: rotateY(180deg);
   -webkit-transform: rotateY(180deg);
@@ -117,52 +117,102 @@ p {
   display: none;
 }
 
-#previous svg{
-  transform: scale(3,3);
+#previous svg {
+  transform: scale(3, 3);
   opacity: 0.2;
   animation-name: translatorPrevious;
   animation-duration: 2s;
-  animation-fill-mode: forwards;}
-@keyframes translatorPrevious {
-  0%   {left:0;}
-  100% {left:-100%;opacity:  0;}
+  animation-fill-mode: forwards;
 }
-#current svg{
-  transform: scale(5,5);
+
+@keyframes translatorPrevious {
+  0% {
+    left: 0;
+  }
+
+  100% {
+    left: -100%;
+    opacity: 0;
+  }
+}
+
+#current svg {
+  transform: scale(5, 5);
   position: relative;
   animation-name: translatorCurrent;
   animation-duration: 2s;
   animation-fill-mode: forwards;
 }
+
 @keyframes translatorCurrent {
-  0%   {left:0;}
-  100% {left:-100%;opacity:0.5;transform:scale(3,3)}
+  0% {
+    left: 0;
+  }
+
+  100% {
+    left: -100%;
+    opacity: 0.5;
+    transform: scale(3, 3)
+  }
 }
-#next svg{
-  transform: scale(3,3);
-  opacity:  0.5;
+
+#next svg {
+  transform: scale(3, 3);
+  opacity: 0.5;
   position: relative;
   animation-name: translatorNext;
   animation-duration: 2s;
   animation-fill-mode: forwards;
 }
+
 @keyframes translatorNext {
-  0%   {left:0;}
-  100% {left:-100%;opacity:  1;transform:scale(5,5)}
+  0% {
+    left: 0;
+  }
+
+  100% {
+    left: -100%;
+    opacity: 1;
+    transform: scale(5, 5)
+  }
 }
-#nextTwo{
+
+#nextTwo {
   position: absolute;
-  width:30%;
-  height: 100%;
+  /* width: 30%;
+  height: 100%; */
 }
-#nextTwo svg{
-  transform: scale(3,3);
-  opacity:  0.5;
+
+#nextTwo svg {
+  transform: scale(3, 3);
+  opacity: 0.5;
   animation-name: opacityNextTwo;
   animation-duration: 2s;
   animation-fill-mode: forwards;
 }
+
 @keyframes opacityNextTwo {
-  0%   {opacity:0;}
-  100% {opacity:0.5;}
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0.5;
+  }
 }
+
+/* #previous>svg {
+  height: 50vh;
+}
+
+#current>svg {
+  height: 50vh;
+}
+
+#next>svg {
+  height: 50vh;
+}
+
+#nextTwo>svg {
+  height: 50vh;
+} */
