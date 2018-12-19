@@ -1,0 +1,66 @@
+/*--------FONTS-------*/
+@font-face {
+  font-family: Archia Light;
+  src: url("../assets/fonts/archia-light-webfont.woff");
+}
+
+@font-face {
+  font-family: Archia Bold;
+  src: url("../assets/fonts/archia-bold-webfont.woff");
+}
+
+h1 {
+  font-family: Archia Bold;
+}
+
+h2 {
+  font-family: Archia Bold;
+}
+
+#overlay {
+  position: fixed;
+  /* Sit on top of the page content */
+  display: none;
+  /* Hidden by default */
+  width: 100%;
+  /* Full width (cover the whole page) */
+  height: 100%;
+  /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  /* Black background with opacity */
+  z-index: 2;
+  /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer;
+  /* Add a pointer on hover */
+}
+
+#ready {
+  z-index: -1;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#ready>h1 {
+  line-height: 95vh;
+  font-size: 10em;
+  position: absolute;
+  width: 100vw;
+}
+
+#ready>h2:last-child {
+  position: absolute;
+  line-height: 135vh;
+  font-size: 2em;
+  width: 100vw;
+}
+
+#ready>h2:first-child {
+  position: absolute;
+  line-height: 60vh;
+  font-size: 2em;
+  width: 100vw;
+}
