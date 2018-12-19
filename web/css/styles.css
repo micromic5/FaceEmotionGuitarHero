@@ -29,6 +29,7 @@ svg {
 /*-------UPPER--------*/
 .upper {
   display: flex;
+  flex-wrap:wrap;
   justify-content: space-between;
 }
 
