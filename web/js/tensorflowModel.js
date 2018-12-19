@@ -85,7 +85,7 @@ function replaceClassWithEmotion(logits) {
       return "Angry";
       break;
     case 1:
-      return "Disgust";
+      return "Neutral";//disgust
       break;
     case 2:
       return "Fear";
@@ -97,7 +97,7 @@ function replaceClassWithEmotion(logits) {
       return "Sad";
       break;
     case 5:
-      return "Surprise";
+      return "Fear";//suprise
       break;
     case 6:
       return "Neutral";

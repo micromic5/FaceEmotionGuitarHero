@@ -26,7 +26,7 @@ function getforms() {
     current.appendChild(next.getElementsByTagName("svg")[0]);
     next.appendChild(cloneRNDNodeOfSVG());
     currentForm = current.firstElementChild.getAttribute("emotion");
-  },5000)
+  },4000)
   setTimeout(function(){
     if(mostFrequentArrayElement(pastPredictions) == currentForm){
         increaseCounter();
@@ -37,11 +37,12 @@ function getforms() {
     previous.removeChild(previous.firstChild);
     currentForm = current.firstElementChild.getAttribute("emotion");
     gameLoop();
-  },9000)
+  },7000)
 }
 
 function gameLoop(){
     setInterval(function(){
+        console.log(mostFrequentArrayElement(pastPredictions)+" == "+currentForm)
         if(mostFrequentArrayElement(pastPredictions) == currentForm){
             increaseCounter();
         }
@@ -76,4 +77,3 @@ function mostFrequentArrayElement(array){
     }
     return maxEl;
 }
-getforms();
