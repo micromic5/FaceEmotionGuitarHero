@@ -18,34 +18,33 @@ const MODEL_PROMISE = async () => {
 };
 
 async function predict(imgElement) {
+  if (model != null) {
+    // status("Predicting...");
+    const startTime = performance.now();
+    const logits = tf.tidy(() => {
+      // tf.fromPixels() returns a Tensor from an image element.
+      const img = tf.fromPixels(imgElement).toFloat();
+      let gray_img = img.mean(2);
+      let final_img = gray_img.expandDims(2);
 
+      // Is it needed ?
+      // const offset = tf.scalar(127.5);
+      // // Normalize the image from [0, 255] to [-1, 1].
+      // const normalized = final_img.sub(offset).div(offset);
 
-  // status("Predicting...");
+      // Reshape to a single-element batch so we can pass it to predict.
+      const batched = final_img.reshape([1, IMAGE_SIZE, IMAGE_SIZE, 1]);
+      // Make a prediction through mobilenet.
+      return model.predict(batched);
 
+    });
 
-  const startTime = performance.now();
-  const logits = tf.tidy(() => {
-    // tf.fromPixels() returns a Tensor from an image element.
-    const img = tf.fromPixels(imgElement).toFloat();
-    let gray_img = img.mean(2);
-    let final_img = gray_img.expandDims(2);
-
-    // Is it needed ?
-    // const offset = tf.scalar(127.5);
-    // // Normalize the image from [0, 255] to [-1, 1].
-    // const normalized = final_img.sub(offset).div(offset);
-
-    // Reshape to a single-element batch so we can pass it to predict.
-    const batched = final_img.reshape([1, IMAGE_SIZE, IMAGE_SIZE, 1]);
-    // Make a prediction through mobilenet.
-    return model.predict(batched);
-  });
-
-  // Shoe inference time
-  // const totalTime = performance.now() - startTime;
-  // status(`Done in ${Math.floor(totalTime)}ms`);
-  // Show the classes in the DOM.
-  showResults(imgElement, logits);
+    // Shoe inference time
+    // const totalTime = performance.now() - startTime;
+    // status(`Done in ${Math.floor(totalTime)}ms`);
+    // Show the classes in the DOM.
+    showResults(imgElement, logits);
+  }
 }
 
 function showResults(imgElement, logits) {
