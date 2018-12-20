@@ -20,12 +20,6 @@ async function predict(imgElement) {
       const img = tf.fromPixels(imgElement).toFloat();
       let gray_img = img.mean(2);
       let final_img = gray_img.expandDims(2);
-
-      // Is it needed ?
-      // const offset = tf.scalar(127.5);
-      // // Normalize the image from [0, 255] to [-1, 1].
-      // const normalized = final_img.sub(offset).div(offset);
-
       // Reshape to a single-element batch so we can pass it to predict.
       const batched = final_img.reshape([1, IMAGE_SIZE, IMAGE_SIZE, 1]);
       // Make a prediction through mobilenet.
